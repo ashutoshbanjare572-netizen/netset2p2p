@@ -1,0 +1,6 @@
+# sample FireHOL-style netset list
+# comments and blank lines should be ignored
+
+10.0.0.0/30
+198.51.100.7
+203.0.113.8/31
