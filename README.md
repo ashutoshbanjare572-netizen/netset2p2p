@@ -3,7 +3,7 @@
 [![CI](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml/badge.svg)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://github.com/taggedzi/netset2p2p)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/taggedzi/netset2p2p/main/.github/badges/coverage.json)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
+[![Coverage](.github/badges/coverage.svg)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/badge/version-1.0.2-informational.svg)](https://github.com/taggedzi/netset2p2p/releases)
 [![SBOM](https://img.shields.io/badge/SBOM-CycloneDX-blue)](https://cyclonedx.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
