@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml/badge.svg)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://github.com/taggedzi/netset2p2p)
-[![Version](https://img.shields.io/badge/version-1.0.0-informational.svg)](https://github.com/taggedzi/netset2p2p/releases)
+[![Version](https://img.shields.io/badge/version-1.0.1-informational.svg)](https://github.com/taggedzi/netset2p2p/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 `netset2p2p` is a small Python library and CLI tool for converting netset files to p2p files.
