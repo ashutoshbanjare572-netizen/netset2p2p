@@ -17,7 +17,6 @@ import re
 import shutil
 import subprocess
 import sys
-import textwrap
 from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
@@ -370,20 +369,21 @@ def build_release_notes(version: str, changelog_body: str, *, dry_run: bool) -> 
     if not dry_run:
         RELEASE_META_DIR.mkdir(parents=True, exist_ok=True)
     output = RELEASE_META_DIR / f"release-notes-v{version}.md"
-    notes = textwrap.dedent(
-        f"""\
-        ## netset2p2p v{version}
-
-        ### Changelog
-
-        {changelog_body.strip()}
-
-        ### Supply Chain Artifacts
-
-        - `SHA256SUMS`
-        - `*.sbom.cdx.json` (CycloneDX)
-        - `*.provenance.json`
-        """
+    notes = "\n".join(
+        [
+            f"## netset2p2p v{version}",
+            "",
+            "### Changelog",
+            "",
+            changelog_body.strip(),
+            "",
+            "### Supply Chain Artifacts",
+            "",
+            "- `SHA256SUMS`",
+            "- `*.sbom.cdx.json` (CycloneDX)",
+            "- `*.provenance.json`",
+            "",
+        ]
     )
     if not dry_run:
         output.write_text(notes, encoding="utf-8")
